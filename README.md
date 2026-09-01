@@ -74,3 +74,7 @@ npm run dev:demo
 | ![微信咨询二维码一](docs/images/zhuatech-wechat-consulting.png) | ![微信咨询二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO：AI 需求预测、销量预测、智能补货、供应链 AI、Java 需求预测源码、Demand Forecasting、知华科技。
+
+## 企业级共识预测发布
+
+新增 `POST /api/enterprise/demandai/consensus-forecast-release`，覆盖数据、活动、新品、异常、准确率、偏差、跨部门会签和人工调整，返回 `RELEASE / CONSENSUS_REVIEW / BLOCKED`。详见 [共识预测说明](docs/ENTERPRISE_CONSENSUS_FORECAST.md)。
