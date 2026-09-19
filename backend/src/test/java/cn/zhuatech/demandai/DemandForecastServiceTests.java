@@ -7,9 +7,15 @@ import java.math.BigDecimal;
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class DemandForecastServiceTests {
     private final DemandForecastService service = new DemandForecastService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void recommendsReplenishmentForPromotionPeak() {
         var result = service.forecast(new DemandForecastService.Request("SKU-2408", new BigDecimal("80"),
             new BigDecimal("110"), new BigDecimal("1.20"), new BigDecimal("0.25"), 7,
@@ -19,6 +25,9 @@ class DemandForecastServiceTests {
         assertThat(result.drivers()).contains("促销活动带来增量");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void holdsWhenInventoryCoversDemand() {
         var result = service.forecast(new DemandForecastService.Request("SKU-1002", new BigDecimal("30"),
             new BigDecimal("32"), BigDecimal.ONE, BigDecimal.ZERO, 3, new BigDecimal("150"), 92));
@@ -26,6 +35,9 @@ class DemandForecastServiceTests {
         assertThat(result.reorderQuantity()).isZero();
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void flagsForecastVersionThatMissesReleaseGate() {
         var result = service.backtest(new DemandForecastService.BacktestRequest("SKU-2408", List.of(
             new DemandForecastService.BacktestPoint("W31", new BigDecimal("100"), new BigDecimal("118")),
